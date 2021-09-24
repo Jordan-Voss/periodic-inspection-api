@@ -3,13 +3,14 @@ package com.ppm.periodicinspection.inspectiontesting.controller;
 import com.ppm.periodicinspection.inspectiontesting.models.ReportFirstPage;
 import com.ppm.periodicinspection.inspectiontesting.service.ReportFirstPageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("api/Report/1")
+@RequestMapping("api/report/1")
 public class ReportFirstPageController {
 
 
@@ -26,11 +27,9 @@ public class ReportFirstPageController {
     };
 
     @PostMapping("/insert")
-    public void insertNewAvailableBooking(@RequestBody List<ReportFirstPage> reportFirstPages) {
-        for (ReportFirstPage reportFirstPage: reportFirstPages
-        ) {
-            reportFirstPageService.insertNewReport(reportFirstPage);
-        }
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public void insertNewAvailableBooking(@RequestBody ReportFirstPage reportFirstPages) {
+            reportFirstPageService.insertNewReport(reportFirstPages);
 
     }
 
