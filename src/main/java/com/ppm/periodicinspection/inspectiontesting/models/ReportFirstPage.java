@@ -10,6 +10,7 @@ public class ReportFirstPage {
         @SequenceGenerator(name = "report_sequence", sequenceName = "report_sequence", allocationSize = 1)
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "report_sequence")
         private Long id;
+        private String reportName;
         @Temporal(TemporalType.DATE)
         private Date date;
         private Long prNo;
@@ -41,8 +42,9 @@ public class ReportFirstPage {
         public ReportFirstPage() {
         }
 
-        public ReportFirstPage(Long id, Date date, Long prNo, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
+        public ReportFirstPage(Long id, String reportName, Date date, Long prNo, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
                 this.id = id;
+                this.reportName = reportName;
                 this.date = date;
                 this.prNo = prNo;
                 this.contractorName = contractorName;
@@ -71,8 +73,9 @@ public class ReportFirstPage {
                 this.trippingCurrent = trippingCurrent;
         }
 
-        public ReportFirstPage(Date date, Long prNo, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
+        public ReportFirstPage(Date date, String reportName, Long prNo, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
                 this.date = date;
+                this.reportName = reportName;
                 this.prNo = prNo;
                 this.contractorName = contractorName;
                 this.contractorAddress = contractorAddress;
@@ -106,6 +109,14 @@ public class ReportFirstPage {
 
         public void setId(Long id) {
                 this.id = id;
+        }
+
+        public String getReportName() {
+                return reportName;
+        }
+
+        public void setReportName(String reportName) {
+                this.reportName = reportName;
         }
 
         public Date getDate() {

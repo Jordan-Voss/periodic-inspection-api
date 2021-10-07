@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface ReportFirstPageRepository extends JpaRepository<ReportFirstPage, Long> {
-    List<ReportFirstPage> findReportFirstPageByPrNo(Long prNo);
+    ReportFirstPage findReportFirstPageByPrNo(Long prNo);
+
+    Boolean existsByPrNo(Long prNo);
 }
