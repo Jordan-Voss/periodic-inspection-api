@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.sql.SQLOutput;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
@@ -33,6 +34,15 @@ public class ReportFirstPageService {
 //        }
             reportFirstPageRepository.save(reportFirstPage);
             System.out.println(reportFirstPage);
+        }
+
+        public void insertEditedReport(ReportFirstPage reportFirstPage) {
+            ReportFirstPage report = reportFirstPageRepository.findReportFirstPageByReportName(reportFirstPage.getReportName());
+            System.out.println(report.getId());
+            // crush the variables of the object found
+            report.setContractorAddress(reportFirstPage.getContractorAddress());
+            System.out.println(report.getContractorAddress());
+            reportFirstPageRepository.save(report);
         }
 
 }

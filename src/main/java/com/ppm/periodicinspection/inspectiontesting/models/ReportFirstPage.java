@@ -22,7 +22,9 @@ public class ReportFirstPage {
         private String occupantAddress;
         private Boolean occupantInAttendance;
         private String installationCategory;
+        private String installationCategoryComment;
         private String inspectionReason;
+        private String inspectionReasonComment;
         private boolean installationExtendCoveredByReport;
         private String partialInspectionComment;
         private String earthingType;
@@ -42,7 +44,7 @@ public class ReportFirstPage {
         public ReportFirstPage() {
         }
 
-        public ReportFirstPage(Long id, String reportName, Date date, Long prNo, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
+        public ReportFirstPage(Long id, String reportName, Date date, Long prNo, String inspectionReasonComment, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategoryComment, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
                 this.id = id;
                 this.reportName = reportName;
                 this.date = date;
@@ -55,7 +57,9 @@ public class ReportFirstPage {
                 this.occupantAddress = occupantAddress;
                 this.occupantInAttendance = occupantInAttendance;
                 this.installationCategory = installationCategory;
+                this.installationCategoryComment = installationCategoryComment;
                 this.inspectionReason = inspectionReason;
+                this.inspectionReasonComment = inspectionReasonComment;
                 this.installationExtendCoveredByReport = installationExtendCoveredByReport;
                 this.partialInspectionComment = partialInspectionComment;
                 this.earthingType = earthingType;
@@ -73,7 +77,7 @@ public class ReportFirstPage {
                 this.trippingCurrent = trippingCurrent;
         }
 
-        public ReportFirstPage(Date date, String reportName, Long prNo, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
+        public ReportFirstPage(Date date, String reportName, Long prNo, String inspectionReasonComment, String installationCategoryComment, String contractorName, String contractorAddress, String contractorRegNo, String installationAge, String occupantName, String occupantAddress, Boolean occupantInAttendance, String installationCategory, String inspectionReason, boolean installationExtendCoveredByReport, String partialInspectionComment, String earthingType, String installationVoltage, Long l1, Long l2, Long l3, Long l1L2, Long l2L3, Long l3L1, int maxProspectiveCurrent, String deviceType, String normalRating, String ratedCurrent, String trippingCurrent) {
                 this.date = date;
                 this.reportName = reportName;
                 this.prNo = prNo;
@@ -84,8 +88,10 @@ public class ReportFirstPage {
                 this.occupantName = occupantName;
                 this.occupantAddress = occupantAddress;
                 this.occupantInAttendance = occupantInAttendance;
+                this.installationCategoryComment = installationCategoryComment;
                 this.installationCategory = installationCategory;
                 this.inspectionReason = inspectionReason;
+                this.inspectionReasonComment = inspectionReasonComment;
                 this.installationExtendCoveredByReport = installationExtendCoveredByReport;
                 this.partialInspectionComment = partialInspectionComment;
                 this.earthingType = earthingType;
@@ -197,6 +203,21 @@ public class ReportFirstPage {
 
         public void setInstallationCategory(String installationCategory) {
                 this.installationCategory = installationCategory;
+        }
+        public String getInstallationCategoryComment() {
+                return installationCategoryComment;
+        }
+
+        public void setInstallationCategoryComment(String installationCategoryComment) {
+                this.installationCategoryComment = installationCategoryComment;
+        }
+
+        public String getInspectionReasonComment() {
+                return inspectionReasonComment;
+        }
+
+        public void setInspectionReasonComment(String inspectionReasonComment) {
+                this.inspectionReasonComment = inspectionReasonComment;
         }
 
         public String getInspectionReason() {

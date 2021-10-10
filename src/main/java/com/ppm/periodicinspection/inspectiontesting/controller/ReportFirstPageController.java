@@ -45,4 +45,10 @@ public class ReportFirstPageController {
         }
     }
 
-}
+    @PostMapping("/update")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public ResponseEntity<?> insertUpdatedReport(@RequestBody ReportFirstPage reportFirstPages) {
+            reportFirstPageService.insertEditedReport(reportFirstPages);
+            return ResponseEntity.accepted().body(new MessageResponse("Updated Successfully"));
+        }
+    }
