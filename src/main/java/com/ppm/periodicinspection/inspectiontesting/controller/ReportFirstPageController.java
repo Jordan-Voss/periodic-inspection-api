@@ -13,7 +13,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("api/report/1")
+@RequestMapping("api/report")
 public class ReportFirstPageController {
 
     @Autowired
